@@ -1,6 +1,5 @@
 import React from "react";
-import "./../../blocks/Header.css";
-import "./../../blocks/Navigation.css";
+import "./Header.css";
 import logo from "../../images/wtwrHeaderLogo.svg";
 import avatarDefault from "../../images/avatarDefault.png";
 

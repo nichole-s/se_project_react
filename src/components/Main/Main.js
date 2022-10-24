@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../blocks/Main.css";
+import "./Main.css";
 import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
 
@@ -42,7 +42,7 @@ function Main({ weatherData, defaultClothing, handleCardClick }) {
           {clothingOptions.map((item) => {
             return (
               <ItemCard
-                clothingItem={item}
+                clothingOption={item}
                 key={item._id}
                 name={item.name}
                 image={item.link}

@@ -1,4 +1,4 @@
-import "./../../blocks/ModalWithForm.css";
+import "./ModalWithForm.css";
 
 function ModalWithForm({ isOpen, name, title, buttonText, onClose, children }) {
   return (

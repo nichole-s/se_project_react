@@ -1,14 +1,10 @@
-import "./../../blocks/ItemCard.css";
+import "./ItemCard.css";
 
-function ItemCard(clothingOption, handleCardClick) {
+function ItemCard({ image, name, onClick }) {
   return (
-    <li className="card" onClick={() => handleCardClick}>
-      <img
-        className="card__image"
-        src={clothingOption.image}
-        alt={clothingOption.name}
-      />
-      <div className="card__title">{clothingOption.name}</div>
+    <li className="card">
+      <img className="card__image" src={image} alt={name} onClick={onClick} />
+      <div className="card__title">{name}</div>
     </li>
   );
 }

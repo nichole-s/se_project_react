@@ -1,5 +1,5 @@
 import { weatherConditions } from "../../utils/constants";
-import "../../blocks/WeatherCard.css";
+import "./WeatherCard.css";
 
 function WeatherCard({ weatherData }) {
   if (!weatherData) return null;

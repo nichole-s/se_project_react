@@ -32,7 +32,7 @@
 }
 
 .modal__exit {
-  background-image: url("../images/formCloseButton.svg");
+  background-image: url("../../images/formCloseButton.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,7 +83,7 @@
 }
 
 .modal__form-exit {
-  background-image: url("../images/closeButtonImage.png");
+  background-image: url("../../images/closeButtonImage.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);

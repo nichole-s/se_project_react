@@ -20,7 +20,7 @@
 
 .modal__container {
   width: 496px;
-  height: 436px;
+  height: 610px;
   border-radius: 20px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -33,7 +33,7 @@
 } */
 
 .modal__close {
-  background: url("./../images/imageCloseButton.svg") transparent;
+  background: url("../../images/imageCloseButton.svg") transparent;
   width: 14px;
   height: 14px;
   background-position: center;
@@ -55,10 +55,11 @@
   height: 498px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
+  margin-bottom: 20px;
 }
 
 .modal__title {
-  margin: 32px auto 12px 32px;
+  margin: 0px auto 12px 32px;
 }
 
 .modal__desc {

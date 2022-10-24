@@ -1,6 +1,6 @@
-import "./../../blocks/ItemModal.css";
+import "./ItemModal.css";
 
-function ItemModal({ isOpen, name, onClose, card }) {
+function ItemModal({ isOpen, name, card, onClose }) {
   return (
     <div
       className={
@@ -12,9 +12,10 @@ function ItemModal({ isOpen, name, onClose, card }) {
           onClick={onClose}
           type="button"
           className="modal__close"
+          alt="close button"
         ></button>
-        <img src={card.image} alt={`${card.name}`} className="modal__image" />
-        <h3 className="modal__title">{card.name}</h3>
+        <img src={card.link} alt={`${card.name}`} className="modal__image" />
+        <p className="modal__title">{card.name}</p>
         <p className="modal__desc">Weather: {card.weather}</p>
       </div>
     </div>

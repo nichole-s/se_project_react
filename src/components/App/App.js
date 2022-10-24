@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../blocks/App.css";
+import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -17,8 +17,8 @@ import {
 
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
-  const [activeModal, setActiveModal] = React.useState();
-  const [selectedCard, setSelectedCard] = React.useState(null);
+  const [activeModal, setActiveModal] = React.useState("");
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   const closeModal = () => {
     setActiveModal(false);

@@ -7,7 +7,6 @@ ul {
 main {
   position: relative;
   display: flex;
-  font-family: CabinetGrotesk-Bold;
 }
 
 .main__description-container {
