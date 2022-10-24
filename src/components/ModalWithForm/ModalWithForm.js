@@ -4,9 +4,7 @@ function ModalWithForm({ isOpen, name, title, buttonText, onClose, children }) {
   return (
     <div
       className={
-        isOpen
-          ? `modal modal_type_${name}`
-          : `modal modal_type_${name} modal_hidden`
+        isOpen ? `modal modal_type_${name}` : `modal_type_${name} modal_hidden`
       }
     >
       <div className="modal__form-container">

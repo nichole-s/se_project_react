@@ -1,4 +1,4 @@
-.modal {
+.item-modal {
   background-color: rgba(0, 0, 0, 0.3);
   width: 100vw;
   height: 100vh;
@@ -13,12 +13,12 @@
   transition: opacity 1s ease-in-out;
 }
 
-.modal_hidden {
+.item-modal_hidden {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.modal__container {
+.item-modal__container {
   width: 496px;
   height: 610px;
   border-radius: 20px;
@@ -27,12 +27,7 @@
   position: relative;
 }
 
-/* .modal__container-alt {
-  width: 498px;
-  height: 610px;
-} */
-
-.modal__close {
+.item-modal__close {
   background: url("../../images/imageCloseButton.svg") transparent;
   width: 14px;
   height: 14px;
@@ -44,13 +39,13 @@
   cursor: pointer;
 }
 
-.modal__header {
+.item-modal__header {
   font-size: 16px;
   margin-left: 28px;
   margin-top: 28px;
 }
 
-.modal__image {
+.item-modal__image {
   width: 498px;
   height: 498px;
   object-fit: cover;
@@ -58,10 +53,10 @@
   margin-bottom: 20px;
 }
 
-.modal__title {
+.item-modal__title {
   margin: 0px auto 12px 32px;
 }
 
-.modal__desc {
+.item-modal__desc {
   margin: 0 auto 32px 32px;
 }
