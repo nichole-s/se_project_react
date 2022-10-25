@@ -42,6 +42,7 @@ function Main({ weatherData, defaultClothing, handleCardClick }) {
           {clothingOptions.map((item) => {
             return (
               <ItemCard
+                isOpen="false"
                 clothingOption={item}
                 key={item._id}
                 name={item.name}

@@ -14,8 +14,9 @@
 }
 
 .item-modal_hidden {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  display: none;
+  max-height: 0px;
+  max-width: 0px;
 }
 
 .item-modal__container {

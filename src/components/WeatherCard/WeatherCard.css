@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  font-family: CabinetGrotesk-Bold;
 }
 
 .weathercard__temp {

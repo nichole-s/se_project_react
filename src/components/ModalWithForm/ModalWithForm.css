@@ -12,7 +12,9 @@
 }
 
 .modal_hidden {
-  display: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: none;
 }
 
 .modal__container {

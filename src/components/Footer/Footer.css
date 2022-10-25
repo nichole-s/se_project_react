@@ -2,7 +2,17 @@
   display: flex;
   justify-content: space-between;
   max-width: 1360px;
-  margin: auto;
+  max-height: 20px;
   font-family: CabinetGrotesk-Medium;
   line-height: 20;
+}
+
+.footer__developer {
+  padding: 0;
+  margin: 0;
+}
+
+.footer__copyright {
+  padding: 0;
+  margin: 0;
 }
