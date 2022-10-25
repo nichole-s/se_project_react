@@ -42,18 +42,21 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header
-        weatherData={weatherData}
-        openModal={() => {
-          setActiveModal("add");
-        }}
-      />
-      <Main
-        weatherData={weatherData}
-        defaultClothing={defaultClothingItems}
-        handleCardClick={handleCardClick}
-      />
-      <Footer />
+      <div>
+        <Header
+          weatherData={weatherData}
+          openModal={() => {
+            setActiveModal("add");
+          }}
+        />
+        <Main
+          weatherData={weatherData}
+          defaultClothing={defaultClothingItems}
+          handleCardClick={handleCardClick}
+        />
+
+        <Footer />
+      </div>
       {activeModal === "add" && (
         <ModalWithForm
           isOpen={activeModal === "add"}
