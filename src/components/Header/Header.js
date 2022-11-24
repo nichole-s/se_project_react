@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import logo from "../../images/wtwrHeaderLogo.svg";
 import avatarDefault from "../../images/avatarDefault.png";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 const Header = ({ weatherData, openModal }) => {
   if (!weatherData) return null;
@@ -20,6 +21,7 @@ const Header = ({ weatherData, openModal }) => {
         </p>
       </div>
       <div className="header__container-user">
+        <ToggleSwitch />
         <button type="button" className="header__button" onClick={openModal}>
           + Add clothes
         </button>

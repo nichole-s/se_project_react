@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Main.css";
 import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
+import currentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 
 function Main({ weatherData, defaultClothing, handleCardClick }) {
   const actualWeather = weatherData.temperature;
@@ -26,6 +27,8 @@ function Main({ weatherData, defaultClothing, handleCardClick }) {
     filterClothing(item, weatherType())
   );
 
+  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
+
   return (
     <div className="main">
       <WeatherCard weatherData={weatherData} />
@@ -33,8 +36,11 @@ function Main({ weatherData, defaultClothing, handleCardClick }) {
         <div className="main__info">
           <div className="main__description-container">
             <p className="main__description">
-              Today is {actualWeather}°F and it is {weatherType()} / You may
-              want to wear:
+              Today is{" "}
+              {currentTemperatureUnit === "F"
+                ? weatherData.temperatureF
+                : weatherData.temperatureC}{" "}
+              and it is {weatherType()} / You may want to wear:
             </p>
           </div>
         </div>
