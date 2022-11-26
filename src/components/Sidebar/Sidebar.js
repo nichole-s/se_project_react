@@ -2,7 +2,7 @@ import React from "react";
 import "../Profile/Profile.css";
 import avatarDefault from "../../images/avatarDefault.png";
 
-function Sidebar() {
+function SideBar() {
   return (
     <div className="profile__sidebar">
       <div className="profile__sidebar-header">
@@ -17,4 +17,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default SideBar;

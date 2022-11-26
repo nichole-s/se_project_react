@@ -1,12 +1,12 @@
 import React from "react";
 import "./Profile.css";
-import Sidebar from "../Sidebar/Sidebar";
+import SideBar from "../SideBar/SideBar";
 import ClothingSection from "../ClothingSection/ClothingSection";
 
 function Profile({ clothingItems, handleCardClick, openModal }) {
   return (
     <div className="profile__wrapper">
-      <Sidebar />
+      <SideBar />
       <ClothingSection
         clothingItems={clothingItems}
         handleCardClick={handleCardClick}
