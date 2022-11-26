@@ -1,6 +1,6 @@
 import "./ItemModal.css";
 
-function ItemModal({ isOpen, name, card, onClose }) {
+function ItemModal({ isOpen, name, card, onClose, handleDeleteModal }) {
   return (
     <div
       className={
@@ -17,12 +17,19 @@ function ItemModal({ isOpen, name, card, onClose }) {
           alt="close button"
         ></button>
         <img
-          src={card.link}
+          src={card.imageUrl}
           alt={`${card.name}`}
           className="item-modal__image"
         />
         <p className="item-modal__title">{card.name}</p>
         <p className="item-modal__desc">Weather: {card.weather}</p>
+        <button
+          type="button"
+          className="item-modal__delete"
+          onClick={handleDeleteModal}
+        >
+          Delete Item
+        </button>
       </div>
     </div>
   );

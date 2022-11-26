@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 import logo from "../../images/wtwrHeaderLogo.svg";
 import avatarDefault from "../../images/avatarDefault.png";
@@ -15,7 +16,9 @@ const Header = ({ weatherData, openModal }) => {
   return (
     <header className="header">
       <div className="header__container-weather">
-        <img src={logo} alt="WTWR logo" className="header__logo" />
+        <NavLink exact to="/" activeClassName="menu__item-active">
+          <img src={logo} alt="WTWR logo" className="header__logo" />
+        </NavLink>
         <p className="header__date-and-city">
           {currentDate}, {weatherData.city}
         </p>
@@ -25,7 +28,9 @@ const Header = ({ weatherData, openModal }) => {
         <button type="button" className="header__button" onClick={openModal}>
           + Add clothes
         </button>
-        <p className="header__user">Terrence Tegegne</p>
+        <NavLink to="/profile" activeClassName="menu__item-active">
+          <p className="header__user">Terrence Tegegne</p>
+        </NavLink>
         <img className="header__avatar" src={avatarDefault} alt="user avatar" />
       </div>
     </header>

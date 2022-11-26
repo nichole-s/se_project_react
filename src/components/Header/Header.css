@@ -53,6 +53,8 @@
 .header__user {
   display: flex;
   margin-right: 12px;
+  text-decoration: none;
+  color: black;
 }
 
 .header__avatar {

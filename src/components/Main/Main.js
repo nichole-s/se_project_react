@@ -4,7 +4,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import currentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 
-function Main({ weatherData, defaultClothing, handleCardClick }) {
+function Main({ weatherData, clothingItems, handleCardClick }) {
   const actualWeather = weatherData.temperature;
   const weatherType = () => {
     if (actualWeather >= 86) {
@@ -23,7 +23,7 @@ function Main({ weatherData, defaultClothing, handleCardClick }) {
       return false;
     }
   }
-  const clothingOptions = defaultClothing.filter((item) =>
+  const clothingOptions = clothingItems.filter((item) =>
     filterClothing(item, weatherType())
   );
 
@@ -50,9 +50,9 @@ function Main({ weatherData, defaultClothing, handleCardClick }) {
               <ItemCard
                 isOpen="false"
                 clothingOption={item}
-                key={item._id}
+                key={item.id}
                 name={item.name}
-                image={item.link}
+                image={item.imageUrl}
                 weather={item.weather}
                 onClick={() => {
                   handleCardClick(item);
