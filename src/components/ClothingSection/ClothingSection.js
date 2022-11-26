@@ -3,7 +3,7 @@ import "../Profile/Profile.css";
 import "../ItemCard/ItemCard.css";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ defaultClothing, handleCardClick, openModal }) {
+function ClothingSection({ defaultClothing, handleCardClick, openModal }) {
   return (
     <div className="profile__clothing-section">
       <div className="profile__clothing-header">
@@ -33,4 +33,4 @@ function ClothesSection({ defaultClothing, handleCardClick, openModal }) {
   );
 }
 
-export default ClothesSection;
+export default ClothingSection;

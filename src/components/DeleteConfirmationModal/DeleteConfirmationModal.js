@@ -1,3 +1,6 @@
+import React from "react";
+import "./DeleteConfirmationModal.css";
+
 function DeleteConfirmationModal({
   isOpen,
   name,
