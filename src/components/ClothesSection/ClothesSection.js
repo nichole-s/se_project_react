@@ -3,7 +3,7 @@ import "../Profile/Profile.css";
 import "../ItemCard/ItemCard.css";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ defaultClothing, handleCardClick, openModal }) {
+function ClothesSection({ clothingItems, handleCardClick, openModal }) {
   return (
     <div className="profile__clothing-section">
       <div className="profile__clothing-header">
@@ -13,14 +13,14 @@ function ClothesSection({ defaultClothing, handleCardClick, openModal }) {
         </button>
       </div>
       <ul className="profile__card-list">
-        {defaultClothing.map((item) => {
+        {clothingItems.map((item) => {
           return (
             <ItemCard
               isOpen="false"
               clothingOption={item}
               key={item._id}
               name={item.name}
-              image={item.link}
+              image={item.imageUrl}
               weather={item.weather}
               onClick={() => {
                 handleCardClick(item);

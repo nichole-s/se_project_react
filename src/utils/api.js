@@ -14,7 +14,7 @@ const handleServerResponse = (res) => {
 };
 
 const getItems = async () => {
-  const res = await fetch(`${baseUrl}`, {
+  const res = await fetch(`${baseUrl}/items`, {
     method: "GET",
     headers: headers,
   });
