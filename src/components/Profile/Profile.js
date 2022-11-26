@@ -1,6 +1,6 @@
 import React from "react";
 import "./Profile.css";
-import SideBar from "../SideBar/SideBar";
+import SideBar from "../rename/rename";
 import ClothingSection from "../ClothingSection/ClothingSection";
 
 function Profile({ clothingItems, handleCardClick, openModal }) {
