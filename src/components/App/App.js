@@ -21,6 +21,7 @@ const App = () => {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [clothingItems, setClothingItems] = useState([]);
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const onCloseModal = () => {
     setActiveModal(false);
@@ -31,8 +32,8 @@ const App = () => {
     setActiveModal("preview");
   };
 
-  const handleAddItemSubmit = (name, link, weather) => {
-    addItem(name, link, weather)
+  const handleAddItemSubmit = (name, imageUrl, weatherType) => {
+    addItem(name, imageUrl, weatherType)
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
         onCloseModal();
@@ -40,10 +41,13 @@ const App = () => {
       .catch((err) => console.log(err));
   };
 
-  const handleCardDelete = (card) => {
-    removeItem(card)
+  const handleCardDelete = () => {
+    removeItem(selectedCard.id)
       .then(() => {
-        setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
+        setClothingItems(
+          clothingItems.filter((item) => item.id !== selectedCard.id)
+        );
+        setSelectedCard({});
         onCloseModal();
       })
       .catch((err) => console.log(err));
@@ -58,8 +62,6 @@ const App = () => {
         .catch((err) => console.log(err));
     }
   }, []);
-
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
@@ -112,13 +114,11 @@ const App = () => {
             </Switch>
             <Footer />
           </div>
-          {activeModal === "add" && (
-            <AddItemModal
-              isOpen={activeModal === "add"}
-              onCloseModal={onCloseModal}
-              onAddItem={handleAddItemSubmit}
-            ></AddItemModal>
-          )}
+          <AddItemModal
+            isOpen={activeModal === "add"}
+            onCloseModal={onCloseModal}
+            onAddItem={handleAddItemSubmit}
+          ></AddItemModal>
           <ItemModal
             isOpen={activeModal === "preview"}
             name={"preview"}
@@ -128,16 +128,15 @@ const App = () => {
               setActiveModal("delete");
             }}
           />
-          {activeModal === "delete" && (
-            <DeleteConfirmationModal
-              name="delete"
-              onClose={onCloseModal}
-              handleConfirm={() => handleCardDelete(selectedCard)}
-              handleCancel={() => {
-                setActiveModal("preview");
-              }}
-            />
-          )}
+          <DeleteConfirmationModal
+            isOpen={activeModal === "delete"}
+            name="delete"
+            onClose={onCloseModal}
+            handleConfirm={() => handleCardDelete(selectedCard)}
+            handleCancel={() => {
+              setActiveModal("preview");
+            }}
+          />
         </BrowserRouter>
       </CurrentTemperatureUnitContext.Provider>
     </div>

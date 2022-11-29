@@ -1,4 +1,5 @@
 import React from "react";
+import "../ModalWithForm/ModalWithForm.css";
 import "./DeleteConfirmationModal.css";
 
 function DeleteConfirmationModal({
@@ -18,7 +19,7 @@ function DeleteConfirmationModal({
         <button
           onClick={onClose}
           type="button"
-          className="modal__close modal__close-delete"
+          className="modal__exit modal__exit-delete"
         ></button>
         <h3 className="modal__title modal__title-delete">
           Are you sure you want to delete this item? This action is

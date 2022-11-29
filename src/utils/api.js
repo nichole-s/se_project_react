@@ -1,4 +1,3 @@
-//const baseUrl = "http://localhost:3001/items";
 const baseUrl =
   "https://my-json-server.typicode.com/nichole-s/se_project_react";
 const headers = {
@@ -21,9 +20,9 @@ const getItems = async () => {
   return handleServerResponse(res);
 };
 
-const addItem = async (name, imageUrl, weatherType) => {
-  const body = { name: name, imageUrl: imageUrl, weather: weatherType };
-  const res = await fetch(`${baseUrl}`, {
+const addItem = async (name, imageUrl, weather) => {
+  const body = { name: name, imageUrl: imageUrl, weather: weather };
+  const res = await fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify(body),
@@ -32,7 +31,7 @@ const addItem = async (name, imageUrl, weatherType) => {
 };
 
 const removeItem = async (id) => {
-  const res = await fetch(`${baseUrl}/${id}`, {
+  const res = await fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: headers,
   });

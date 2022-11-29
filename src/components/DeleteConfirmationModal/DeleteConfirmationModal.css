@@ -1,3 +1,12 @@
+.modal__container-delete {
+  margin: auto;
+  width: 670px;
+  height: 280px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
 .modal__delete {
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
@@ -34,9 +43,16 @@
   background-color: rgba(0, 0, 0, 0);
   color: #000;
   position: absolute;
+  left: 215px;
   bottom: 60px;
-  left: 305px;
   font-size: 20px;
   line-height: 24px;
   cursor: pointer;
+}
+.modal__exit-delete {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 451px;
+  top: 23px;
 }

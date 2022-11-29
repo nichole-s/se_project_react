@@ -1,14 +1,6 @@
 import "./ModalWithForm.css";
 
-function ModalWithForm({
-  isOpen,
-  name,
-  title,
-  buttonText,
-  onClose,
-  handleSubmit,
-  children,
-}) {
+function ModalWithForm({ isOpen, name, title, onClose, children }) {
   return (
     <div
       className={
@@ -24,13 +16,13 @@ function ModalWithForm({
         <h3 className="modal__form-title">{title}</h3>
         <form className="form" name={name}>
           {children}
-          <button
+          {/* { <button
             className="form__submit"
             type="submit"
             onSubmit={handleSubmit}
           >
             {buttonText}
-          </button>
+          </button> }  */}
         </form>
       </div>
     </div>

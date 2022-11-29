@@ -18,8 +18,8 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
     setWeatherType(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     onAddItem(name, imageUrl, weatherType);
   };
 
@@ -28,10 +28,8 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
       isOpen={isOpen}
       name="add"
       title="New garment"
-      buttonText="Add garment"
       onClose={onCloseModal}
       onAddItem={onAddItem}
-      handleSubmit={handleSubmit}
       handleName={handleName}
       handleWeather={handleWeather}
       handleImageChange={handleUrl}
@@ -101,6 +99,9 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
             Cold
           </label>
         </div>
+        <button className="form__submit" type="submit" onSubmit={handleSubmit}>
+          Add garment
+        </button>
       </div>
     </ModalWithForm>
   );
