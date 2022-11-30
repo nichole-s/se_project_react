@@ -18,7 +18,7 @@ function ClothesSection({ clothingItems, handleCardClick, openModal }) {
             <ItemCard
               isOpen="false"
               clothingOption={item}
-              key={item.id}
+              key={`${item.id}${item.name}`}
               name={item.name}
               image={item.imageUrl}
               weather={item.weather}

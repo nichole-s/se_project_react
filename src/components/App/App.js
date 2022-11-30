@@ -116,7 +116,9 @@ const App = () => {
           </div>
           <AddItemModal
             isOpen={activeModal === "add"}
-            onCloseModal={onCloseModal}
+            name={"add"}
+            title={"New Garment"}
+            onClose={onCloseModal}
             onAddItem={handleAddItemSubmit}
           ></AddItemModal>
           <ItemModal

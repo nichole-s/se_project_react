@@ -6,6 +6,12 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
   const [imageUrl, setImageUrl] = React.useState("");
   const [weatherType, setWeatherType] = React.useState("");
 
+  React.useEffect(() => {
+    setName("");
+    setImageUrl("");
+    setWeatherType(null);
+  }, [isOpen]);
+
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -29,10 +35,8 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
       name="add"
       title="New garment"
       onClose={onCloseModal}
-      onAddItem={onAddItem}
-      handleName={handleName}
-      handleWeather={handleWeather}
-      handleImageChange={handleUrl}
+      onSubmit={handleSubmit}
+      buttonText="Add garment"
     >
       <h4 className="form__label">Name</h4>
       <input
@@ -99,9 +103,6 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
             Cold
           </label>
         </div>
-        <button className="form__submit" type="submit" onSubmit={handleSubmit}>
-          Add garment
-        </button>
       </div>
     </ModalWithForm>
   );
