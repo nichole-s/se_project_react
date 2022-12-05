@@ -21,7 +21,6 @@ const getItems = async () => {
 };
 
 const addItem = async (name, imageUrl, weatherType) => {
-  // const body = { name: name, imageUrl: imageUrl, weather: weather };
   const res = await fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: headers,

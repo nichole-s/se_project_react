@@ -1,8 +1,4 @@
-// const secretKey = "cf759c55f9244983ab9140125222509";
-
 const apiKey = "989a928ab9bf3110a6a6a0e73d27594f";
-
-// const location = { latitude: "45.123630", longitude: "-92.675880" };
 
 const latitude = "45.123630";
 
