@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import _ from "lodash";
 import "./Main.css";
 import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
@@ -50,7 +51,7 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
               <ItemCard
                 isOpen="false"
                 clothingOption={item}
-                key={`${item.id}${item.name}`}
+                key={_.uniqueId(`${item.name}-`)}
                 name={item.name}
                 image={item.imageUrl}
                 weather={item.weather}

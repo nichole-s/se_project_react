@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 import "../Profile/Profile.css";
 import "../ItemCard/ItemCard.css";
 import ItemCard from "../ItemCard/ItemCard";
@@ -18,7 +19,7 @@ function ClothesSection({ clothingItems, handleCardClick, openModal }) {
             <ItemCard
               isOpen="false"
               clothingOption={item}
-              key={`${item.id}${item.name}`}
+              key={_.uniqueId(`${item.name}-`)}
               name={item.name}
               image={item.imageUrl}
               weather={item.weather}

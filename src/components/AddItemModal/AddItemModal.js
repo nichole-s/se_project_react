@@ -6,10 +6,16 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
   const [imageUrl, setImageUrl] = React.useState("");
   const [weatherType, setWeatherType] = React.useState("");
 
+  const radioButtons = document.querySelectorAll(".form__input-radio");
+  const clearRadioButtons = () => {
+    radioButtons.forEach((button) => (button.checked = false));
+  };
+
   React.useEffect(() => {
     setName("");
     setImageUrl("");
     setWeatherType(null);
+    clearRadioButtons();
   }, [isOpen]);
 
   const handleName = (e) => {

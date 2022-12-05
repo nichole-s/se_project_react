@@ -37,6 +37,7 @@ const App = () => {
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
         onCloseModal();
+        console.log(clothingItems);
       })
       .catch((err) => console.log(err));
   };
