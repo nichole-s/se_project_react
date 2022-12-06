@@ -1,7 +1,7 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
+const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
   const [name, setName] = React.useState("");
   const [imageUrl, setImageUrl] = React.useState("");
   const [weatherType, setWeatherType] = React.useState("");
@@ -40,7 +40,7 @@ const AddItemModal = ({ isOpen, onCloseModal, onAddItem }) => {
       isOpen={isOpen}
       name="add"
       title="New garment"
-      onClose={onCloseModal}
+      onClose={onClose}
       onSubmit={handleSubmit}
       buttonText="Add garment"
     >

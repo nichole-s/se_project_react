@@ -24,7 +24,7 @@ const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const onCloseModal = () => {
-    setActiveModal(false);
+    setActiveModal("");
   };
 
   const handleCardClick = (card) => {
