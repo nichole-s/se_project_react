@@ -18,11 +18,10 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
   };
 
   function filterClothing(card, data) {
-    if (card.weather === data) {
-      return true;
-    } else {
-      return false;
-    }
+    return (
+      card.weather?.toLowerCase() === data ||
+      card.weatherType?.toLowerCase() === data
+    );
   }
   const clothingOptions = clothingItems.filter((item) =>
     filterClothing(item, weatherType())

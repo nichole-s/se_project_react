@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 import "../Profile/Profile.css";
 import "../ItemCard/ItemCard.css";
 import ItemCard from "../ItemCard/ItemCard";
