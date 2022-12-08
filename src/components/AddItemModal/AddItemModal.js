@@ -5,17 +5,17 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
   const [name, setName] = React.useState("");
   const [imageUrl, setImageUrl] = React.useState("");
   const [weatherType, setWeatherType] = React.useState("");
-
-  const radioButtons = document.querySelectorAll(".form__input-radio");
-  const clearRadioButtons = () => {
-    radioButtons.forEach((button) => (button.checked = false));
-  };
+  const [isHotChecked, setIsHotChecked] = React.useState(false);
+  const [isWarmChecked, setIsWarmChecked] = React.useState(false);
+  const [isColdChecked, setIsColdChecked] = React.useState(false);
 
   React.useEffect(() => {
     setName("");
     setImageUrl("");
-    setWeatherType(null);
-    clearRadioButtons();
+    setWeatherType("");
+    setIsHotChecked(false);
+    setIsWarmChecked(false);
+    setIsColdChecked(false);
   }, [isOpen]);
 
   const handleName = (e) => {
@@ -26,8 +26,30 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
     setImageUrl(e.target.value);
   };
 
+  // const weatherSelection = () => {
+  //   console.log(`isHotChecked:${isHotChecked}`);
+  //   console.log(`isWarmChecked:${isWarmChecked}`);
+  //   console.log(`isColdChecked:${isColdChecked}`);
+  //   if (isHotChecked === "true") {
+  //     return "hot";
+  //   } else if (isWarmChecked === "true") {
+  //     return "warm";
+  //   } else if (isColdChecked === "true") {
+  //     return "cold";
+  //   } else {
+  //     return "";
+  //   }
+  // };
+
+  // const handleWeather = () => {
+  //   console.log(weatherSelection);
+  //   setWeatherType(weatherSelection);
+  // };
+
   const handleWeather = (e) => {
+    console.log(weatherType);
     setWeatherType(e.target.value);
+    console.log(weatherType);
   };
 
   const handleSubmit = (event) => {
@@ -73,6 +95,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
         <div className="form__radio">
           <input
             className="form__input-radio"
+            checked={isHotChecked}
             id="hot"
             name="weather"
             value="hot"
@@ -86,6 +109,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
         <div className="form__radio">
           <input
             className="form__input-radio"
+            checked={isWarmChecked}
             id="warm"
             name="weather"
             value="warm"
@@ -99,6 +123,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
         <div className="form__radio">
           <input
             className="form__input-radio"
+            checked={isColdChecked}
             id="cold"
             name="weather"
             value="cold"

@@ -35,7 +35,11 @@ const App = () => {
   const handleAddItemSubmit = (name, imageUrl, weatherType) => {
     addItem(name, imageUrl, weatherType)
       .then((item) => {
-        setClothingItems([...clothingItems, item]);
+        const items = [...clothingItems, item];
+        console.log(clothingItems);
+        console.log(item);
+        console.log(items);
+        setClothingItems(items);
         onCloseModal();
       })
       .catch((err) => console.log(err));
@@ -73,6 +77,7 @@ const App = () => {
     getItems()
       .then((data) => {
         setClothingItems(data);
+        console.log(data);
       })
       .catch((err) => console.log(err));
   };

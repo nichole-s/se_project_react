@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import _ from "lodash";
 import "./Main.css";
 import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
-import currentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function Main({ weatherData, clothingItems, handleCardClick }) {
   const actualWeather = weatherData.temperature;
@@ -27,10 +26,10 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
     filterClothing(item, weatherType())
   );
 
-  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   return (
-    <div className="main">
+    <main className="main">
       <WeatherCard weatherData={weatherData} />
       <section className="main__clothes">
         <div className="main__info">
@@ -50,7 +49,7 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
               <ItemCard
                 isOpen="false"
                 clothingOption={item}
-                key={_.uniqueId(`${item.name}-`)}
+                key={item.id}
                 name={item.name}
                 image={item.imageUrl}
                 weather={item.weather}
@@ -62,7 +61,7 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
           })}
         </ul>
       </section>
-    </div>
+    </main>
   );
 }
 
